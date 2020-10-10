@@ -14,4 +14,8 @@ public class Cell {
     public void cellStatus(Status status){
         this.status = status;
     }
+
+    public Status getStatus (){
+        return status;
+    }
 }
