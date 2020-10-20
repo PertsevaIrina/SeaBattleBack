@@ -11,11 +11,19 @@ public class Cell {
         status = Status.EMPTY;
     }
 
-    public void cellStatus(Status status){
+    public void setStatus(Status status){
         this.status = status;
     }
 
     public Status getStatus (){
         return status;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
