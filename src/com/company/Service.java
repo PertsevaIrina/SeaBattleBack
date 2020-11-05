@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Service {
 
-    public static void setShips(Field field, List<Ship> listOfShip) {
+    public  void setShips(Field field, List<Ship> listOfShip) {
         List<Cell> listOfRandom = new ArrayList<>(field.getListOfCells());
         for (int i = 0; i < 4; i++) {//ответает за тип корабля
             int countOfDeck = 4 - i;
@@ -33,16 +33,7 @@ public class Service {
 
         }
     }
-
-    public static List<Cell> copy(Field field, List<Cell> list) {
-        List<Cell> copy = new ArrayList<>();
-        for (Cell c : list) {
-            copy.add(field.getCell(c.getX(), c.getY()));
-        }
-        return copy;
-    }
-
-    private static List<Cell> getListOfShipCells(Field field, List<Cell> listOfRandom, int countOfDeck) {
+    private List<Cell> getListOfShipCells(Field field, List<Cell> listOfRandom, int countOfDeck) {
         List<Cell> listOfCellX = new ArrayList<>();
         List<Cell> listOfCellY = new ArrayList<>();
         Cell cell;
@@ -103,8 +94,7 @@ public class Service {
         }
         return null;
     }
-
-    private static void removeCells(Field field, List<Cell> listOfRandom, List<Cell> listOfCell) {
+    private void removeCells(Field field, List<Cell> listOfRandom, List<Cell> listOfCell) {
         for (Cell c : listOfCell) {
             int x = c.getX();
             int y = c.getY();
@@ -119,7 +109,15 @@ public class Service {
         }
     }
 
-    public static boolean process(Game game) {
+    public static List<Cell> copy(Field field, List<Cell> list) {
+        List<Cell> copy = new ArrayList<>();
+        for (Cell c : list) {
+            copy.add(field.getCell(c.getX(), c.getY()));
+        }
+        return copy;
+    }
+
+    public  boolean process(Game game) {
 
 
         while (alive(game.getPlayer1()) && alive(game.getPlayer2())) {
@@ -141,7 +139,7 @@ public class Service {
         return game.getStep();
     }
 
-    private static boolean alive(Player player) {
+    private boolean alive(Player player) {
         for (Ship ship : player.getListOfShips()) {
             if (ship.isAlive()) {
                 return true;
@@ -150,7 +148,7 @@ public class Service {
         return false;
     }
 
-    private static void killAround(Player player, Ship ship) {
+    private void killAround(Player player, Ship ship) {
         for (Cell c : ship.getCellList()) {
             int x = c.getX();
             int y = c.getY();
@@ -169,7 +167,7 @@ public class Service {
         }
     }
 
-    private static boolean shot(Player player) {
+    private boolean shot(Player player) {
 
         Cell cell = player.getField().getListOfCells().remove(random(0, player.getField().getListOfCells().size()));
         if (cell.getStatus() == Status.SHIP) {
@@ -183,13 +181,14 @@ public class Service {
             }
             return true;
         } else if (cell.getStatus() == Status.EMPTY) {
-//            cell.setStatus(Status.MISS);
+            cell.setStatus(Status.MISS);
         }
         return false;
 
     }
 
-    private static int random(int a, int b) {
+
+    private int random(int a, int b) {
         return (int) (Math.random() * (b - a)) + a;
     }
 

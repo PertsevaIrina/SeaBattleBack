@@ -24,12 +24,13 @@ public class Game {
     }
 
     public Game() {
+        Service service = new Service();
 
         this.player1 = new Player();
         this.player2 = new Player();
-        Service.setShips(player1.getField(), player1.getListOfShips());
-        Service.setShips(player2.getField(), player2.getListOfShips());
 
+        service.setShips(player1.getField(), player1.getListOfShips());
+        service.setShips(player2.getField(), player2.getListOfShips());
 
 
     }
