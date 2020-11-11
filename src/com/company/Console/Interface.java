@@ -1,6 +1,7 @@
-package com.company;
+package com.company.Console;
 
-import org.w3c.dom.ls.LSOutput;
+import com.company.Objects.Field;
+import com.company.Game;
 
 public class Interface {
     public static void draw(Game game) {

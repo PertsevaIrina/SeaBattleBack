@@ -1,10 +1,17 @@
-package com.company;
+package com.company.Logic;
+
+import com.company.*;
+import com.company.Console.Interface;
+import com.company.Enum.Status;
+import com.company.Objects.Cell;
+import com.company.Objects.Field;
+import com.company.Objects.Ship;
+import com.company.Player.Player;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class Service {
+public class GameService {
 
     public  void setShips(Field field, List<Ship> listOfShip) {
         List<Cell> listOfRandom = new ArrayList<>(field.getListOfCells());
@@ -124,12 +131,13 @@ public class Service {
             if (game.getStep()) {
                 if (!shot(game.getPlayer2())) {
                     game.setStep(false);
+//                    Interface.draw(game);
 
                 }
             } else {
                 if (!shot(game.getPlayer1())) {
                     game.setStep(true);
-
+//                    Interface.draw(game);
                 }
 
             }

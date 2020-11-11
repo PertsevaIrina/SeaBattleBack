@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Objects;
+
+import com.company.Enum.Status;
 
 import java.util.List;
 

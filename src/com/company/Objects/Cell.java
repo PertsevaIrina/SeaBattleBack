@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Objects;
+
+import com.company.Enum.Status;
 
 public class Cell {
     private int x;

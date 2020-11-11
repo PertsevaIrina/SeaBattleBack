@@ -1,6 +1,7 @@
 package com.company;
 
-import java.util.List;
+import com.company.Logic.GameService;
+import com.company.Player.Player;
 
 public class Game {
     private Player player1;
@@ -24,7 +25,7 @@ public class Game {
     }
 
     public Game() {
-        Service service = new Service();
+        GameService service = new GameService();
 
         this.player1 = new Player();
         this.player2 = new Player();

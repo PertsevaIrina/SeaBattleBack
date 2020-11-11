@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Enum;
 
 public enum Status {
     EMPTY,

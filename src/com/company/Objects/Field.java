@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Objects;
+
+import com.company.Objects.Cell;
 
 import java.util.ArrayList;
 import java.util.List;

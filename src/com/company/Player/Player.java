@@ -1,4 +1,7 @@
-package com.company;
+package com.company.Player;
+
+import com.company.Objects.Field;
+import com.company.Objects.Ship;
 
 import java.util.ArrayList;
 import java.util.List;
